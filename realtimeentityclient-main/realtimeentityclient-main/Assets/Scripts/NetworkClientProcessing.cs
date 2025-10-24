@@ -81,12 +81,14 @@ static public class NetworkClientProcessing
 #region Protocol Signifiers
 static public class ClientToServerSignifiers
 {
-    public const int asd = 1;
+    public const int PopRequest = 1;
 }
 
 static public class ServerToClientSignifiers
 {
-    public const int asd = 1;
+    public const int SpawnBalloon = 1;
+    public const int PopBalloon = 2;
+    public const int FullState = 3;
 }
 
 #endregion
