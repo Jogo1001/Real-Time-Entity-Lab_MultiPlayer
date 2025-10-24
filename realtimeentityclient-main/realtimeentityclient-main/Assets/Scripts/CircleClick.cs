@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class CircleClick : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
-    void Update()
-    {
-        
-    }
+    public int balloonID;
+
     void OnMouseDown()
     {
-        Destroy(gameObject);
+        if (NetworkClientProcessing.IsConnectedToServer())
+        {
+  
+        }
+        else Destroy(gameObject);
     }
 }
