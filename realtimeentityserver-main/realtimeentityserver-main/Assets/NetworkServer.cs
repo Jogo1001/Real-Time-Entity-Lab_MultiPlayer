@@ -11,7 +11,7 @@ public class NetworkServer : MonoBehaviour
     private NativeList<NetworkConnection> networkConnections;
     NetworkPipeline reliableAndInOrderPipeline;
     NetworkPipeline nonReliableNotInOrderedPipeline;
-    const ushort NetworkPort = 9001;
+    const ushort NetworkPort = 9005;
     const int MaxNumberOfClientConnections = 1000;
     Dictionary<int, NetworkConnection> idToConnectionLookup;
     Dictionary<NetworkConnection, int> connectionToIDLookup;

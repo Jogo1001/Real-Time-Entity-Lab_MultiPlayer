@@ -13,22 +13,15 @@ static public class NetworkServerProcessing
         string[] csv = msg.Split(',');
         int signifier = int.Parse(csv[0]);
 
-        if (signifier == ClientToServerSignifiers.asd)
-        {
-
-        }
-        // else if (signifier == ClientToServerSignifiers.asd)
-        // {
-
-        // }
-
-        //gameLogic.DoSomething();
     }
     static public void SendMessageToClient(string msg, int clientConnectionID, TransportPipeline pipeline)
     {
         networkServer.SendMessageToClient(msg, clientConnectionID, pipeline);
     }
-
+    static public void BroadcastMessageToAllClients(string msg, TransportPipeline pipe)
+    { 
+        networkServer.BroadcastMessage(msg, pipe);
+    }
     #endregion
 
     #region Connection Events
@@ -67,12 +60,14 @@ static public class NetworkServerProcessing
 #region Protocol Signifiers
 static public class ClientToServerSignifiers
 {
-    public const int asd = 1;
+    public const int PopRequest = 1;
 }
 
 static public class ServerToClientSignifiers
 {
-    public const int asd = 1;
+    public const int Spawn = 1;    
+    public const int Pop = 2;       
+    public const int FullState = 3;
 }
 
 #endregion
